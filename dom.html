@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .box {
+        background-color: gray;
+        margin: 2rem 0 0 0;
+        padding: 20px;
+        width: 20vw;
+        height: 20vh;
+      }
+    </style>
+    <title>DOM</title>
+  </head>
+  <body>
+    <button>hello</button>
+    <div class="container">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <script>
+      // using the DOM
+      document.title = "good job";
+      const divContainer = document.querySelector(".container");
+      const btn = document.querySelector("button");
+      function function1() {}
+      btn.addEventListener("click", function1);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .is-subscribed {
+        background-color: lightgray;
+        padding: 0.4rem 1rem;
+        border-radius: 10px;
+        border: none;
+        color: white;
+      }
+    </style>
+    <title>DOM project</title>
+  </head>
+  <body>
+    <!-- subscribe section -->
+    <p>YouTube Subscribe Button</p>
+    <button id="Subscribe" onclick=" SubscribeFunction() ">Subscribe</button>
+
+    <p>Rock Paper Scissors</p>
+    <a href="">Click here</a>
+    <!-- end -->
+
+    <!-- calculation -->
+    <p>Amazon shopping calculator</p>
+    <input
+      type="text"
+      placeholder="Cost of Order"
+      class="input"
+      keydown="typing"
+    />
+    <button onclick="calculateTotal()">calculate</button>
+    <p class="Display-Cost"></p>
+    <!-- end -->
+
+    <script>
+      function SubscribeFunction() {
+        const SubscribeBtn = document.getElementById("Subscribe");
+        if (SubscribeBtn.innerHTML === "Subscribe") {
+          SubscribeBtn.innerHTML = "Subscribed";
+          SubscribeBtn.classList.add("is-subscribed");
+        } else {
+          SubscribeBtn.innerHTML = "Subscribe";
+          SubscribeBtn.classList.remove("is-subscribed");
+        }
+      }
+
+      function calculateTotal() {
+        const inputElement = document.querySelector(".input");
+        let cost = Number(inputElement.value);
+
+        if (cost < 40) {
+          cost = cost + 10;
+        }
+
+        document.querySelector(".Display-Cost").innerHTML = `$${cost}`;
+      }
+
+      // change css when button is clicked
+    </script>
+  </body>
+</html>
