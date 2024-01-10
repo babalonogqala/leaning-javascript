@@ -6,7 +6,15 @@ function randerTodoList() {
   // for loop for taking in the empty array
   for (let i = 0; i < todolist.length; i++) {
     const todo = todolist[i];
-    const html = `<p>${todo}</p>`; //add the paragraph that will hold the input text
+    const html = `
+   
+    <p class = "bg-color"> <span>
+    ${todo} </span>
+    <button onclick = "
+    todolist.splice(${i}, 1);
+    randerTodoList();
+    ">Delete</button>
+    </p>`; //add the paragraph that will hold the input text
     todolistHTML += html; //by adding the 2 variables it will add what ever is entered in the todo input to the array then to the paragraph
   }
 

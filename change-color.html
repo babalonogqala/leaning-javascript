@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Background Color</title>
+    <style>
+      body {
+        transition: background-color 0.5s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <svg
+      id="changeColor"
+      width="100"
+      height="100"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="currentColor"
+      class="bi bi-arrow-left"
+      viewBox="0 0 16 16"
+    >
+      <path
+        d="M16 8a.5.5 0 0 1-.5.5H1a1 1 0 0 1 0-2h14.5a.5.5 0 0 1 0 1zM4.354 14.354a.5.5 0 0 1 0-.708l-4-4a.5.5 0 1 1 .708-.708L4 12.293V1.5a.5.5 0 0 1 1 0v10.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4z"
+      />
+    </svg>
+
+    <script>
+      const background = document.body;
+      const changeColor = document.getElementById("changeColor");
+      let isWhite = true;
+
+      function changeTheme() {
+        if (isWhite) {
+          background.style.backgroundColor = "red";
+        } else {
+          background.style.backgroundColor = "white";
+        }
+
+        isWhite = !isWhite;
+      }
+
+      changeColor.addEventListener("click", changeTheme);
+    </script>
+  </body>
+</html>
