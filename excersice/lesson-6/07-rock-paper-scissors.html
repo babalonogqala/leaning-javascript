@@ -10,8 +10,23 @@
     <button onclick="playGame('rock')">rock</button>
     <button onclick="playGame('paper')">paper</button>
     <button onclick="playGame('scissors')">scissors</button>
+    <button onclick="reset()">reset</button>
 
     <script>
+      function reset() {
+        score.wins = 0;
+        score.losses = 0;
+        score.tie = 0;
+        localStorage.removeItem(score);
+      }
+      let score = JSON.parse(localStorage.getItem("score"));
+      if (score === null) {
+        score = {
+          wins: 0,
+          losses: 0,
+          tie: 0
+        };
+      }
       function playGame(playerMove) {
         const computerNumber = pickComputerMove();
         let result = "";
@@ -41,8 +56,17 @@
           }
         }
 
+        if (result === "win") {
+          score.wins += 1;
+        } else if (result === "lose") {
+          score.losses += 1;
+        } else if (result === "tie") {
+          score.tie += 1;
+        }
+        localStorage.setItem("score", JSON.stringify(score));
         alert(
-          `you picked ${playerMove} and the computer picked  ${computerNumber}. you ${result}`
+          `you picked ${playerMove} and the computer picked  ${computerNumber}. you ${result}
+           wins : ${score.wins}, loses : ${score.losses}, tie: ${score.tie} `
         );
       }
 
